@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="angularModule" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<title>Document</title>
+</head>
+<body ng-controller="mainController">
+
+
+	<div class="container">
+		
+		<div class="jumbotron text-center">
+            <h1>Angular TODO List <span class="label label-info">{{ todos.length }}</span></h1>
+        </div>
+
+		<div class="checkbox" ng-repeat="todo in todos">
+			<label>
+				<input type="checkbox" ng-click="deleteTodo(todo.idTarea)">{{todo.tarea}}
+			</label>
+		</div>
+		
+		<form>
+			<div class="form-group">
+				<input type="text" class="form-control input-lg text-center" placeholder="Ingresa una tarea nueva" ng-model="formData.text" name="text">
+			</div>
+			<button class="btn btn-primary btn-lg" ng-click="createTodo()">Agregar</button>
+		</form>
+	</div>
+
+
+
+
+
+
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+	<script src="core.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
